@@ -1,0 +1,161 @@
+/* ============================================================
+   Waybar CSS — Omarchy Catppuccin (Mocha) theme
+   Colors:
+     Base:    #1e1e2e  — darkest background
+     Mantle:  #181825  — bar background (Omarchy uses #181824)
+     Surface: #313244  — module background hover
+     Text:    #cdd6f4  — primary text
+     Mauve:   #cba6f7  — accent
+     Blue:    #89b4fa  — secondary accent
+     Green:   #a6e3a1  — success
+     Red:     #f38ba8  — critical
+     Yellow:  #f9e2af  — warning
+============================================================ */
+
+/* --- Global reset --- */
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   "JetBrainsMono Nerd Font", "Font Awesome 6 Free", monospace;
+    font-size:     12px;
+    font-weight:   bold;
+    min-height:    0;
+    margin:        0;
+    padding:       0;
+}
+
+/* --- Bar --- */
+window#waybar {
+    background-color: #181825;
+    color:            #cdd6f4;
+    border-bottom:    1px solid #313244;
+    transition:       none;
+}
+
+/* --- Tooltip --- */
+tooltip {
+    background-color: #1e1e2e;
+    color:            #cdd6f4;
+    border:           1px solid #313244;
+    border-radius:    6px;
+    padding:          6px 10px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* --- All modules base --- */
+#workspaces,
+#clock,
+#battery,
+#cpu,
+#network,
+#pulseaudio,
+#bluetooth,
+#tray {
+    padding:    0 10px;
+    color:      #cdd6f4;
+    background: transparent;
+}
+
+/* --- Workspace buttons --- */
+#workspaces button {
+    padding:    0 4px;
+    color:      #6c7086;
+    background: transparent;
+    border:     none;
+    min-width:  0;
+}
+
+#workspaces button:hover {
+    background: rgba(49, 50, 68, 0.5);
+    color:      #cdd6f4;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+}
+
+#workspaces button.occupied {
+    color: #a6adc8;
+}
+
+#workspaces button.urgent {
+    color:      #f38ba8;
+    background: rgba(243, 139, 168, 0.15);
+}
+
+/* --- Clock --- */
+#clock {
+    color:       #cdd6f4;
+    font-weight: normal;
+}
+
+/* --- Battery --- */
+#battery {
+    color: #a6e3a1;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9e2af;
+}
+
+#battery.critical:not(.charging) {
+    color:            #f38ba8;
+    animation-name:   blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* --- Network --- */
+#network {
+    color: #89b4fa;
+}
+
+#network.disconnected {
+    color: #6c7086;
+}
+
+/* --- Audio --- */
+#pulseaudio {
+    color: #cba6f7;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+/* --- CPU --- */
+#cpu {
+    color: #89dceb;
+}
+
+/* --- Bluetooth --- */
+#bluetooth {
+    color: #89b4fa;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #6c7086;
+}
+
+/* --- Tray --- */
+#tray {
+    padding-right: 6px;
+}
+
+#tray > .passive     { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+/* --- Blink keyframes for critical battery --- */
+@keyframes blink {
+    to { color: #f38ba8; background-color: rgba(243,139,168,0.2); }
+}
