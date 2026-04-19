@@ -1,0 +1,43 @@
+# ============================================================
+# Mako — Notification daemon
+# Theme: Catppuccin Mocha (identical to Omarchy)
+# ============================================================
+
+# Default styling
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#313244
+border-radius=6
+border-size=1
+
+font=JetBrainsMono Nerd Font 11
+width=340
+height=120
+margin=10
+padding=12
+
+default-timeout=5000
+ignore-timeout=0
+
+layer=overlay
+anchor=top-right
+
+# Group notifications by app
+group-by=app-name
+
+# Buttons (mako 1.9+)
+[urgency=low]
+background-color=#1e1e2e
+text-color=#6c7086
+border-color=#313244
+
+[urgency=normal]
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#313244
+
+[urgency=high]
+background-color=#1e1e2e
+text-color=#f38ba8
+border-color=#f38ba8
+default-timeout=0

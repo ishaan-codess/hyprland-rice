@@ -1,0 +1,66 @@
+/* ============================================================
+   Wofi — App Launcher
+   Theme: Catppuccin Mocha (replaces Omarchy's walker launcher)
+   ============================================================ */
+
+window {
+    margin:           0px;
+    border:           1px solid #313244;
+    border-radius:    10px;
+    background-color: #1e1e2e;
+    font-family:      "JetBrainsMono Nerd Font", monospace;
+    font-size:        13px;
+}
+
+#input {
+    padding:          10px 14px;
+    margin:           8px 8px 0 8px;
+    border:           none;
+    border-radius:    6px;
+    color:            #cdd6f4;
+    background-color: #181825;
+    outline:          none;
+    caret-color:      #cba6f7;
+}
+
+#input:focus {
+    border: 1px solid #cba6f7;
+}
+
+#inner-box {
+    margin:  8px;
+    padding: 0;
+}
+
+#outer-box {
+    margin:  0;
+    padding: 0;
+}
+
+#scroll {
+    margin:  0;
+    padding: 0;
+}
+
+#text {
+    padding:    2px 0;
+    color:      #cdd6f4;
+}
+
+#entry {
+    padding:      6px 12px;
+    border-radius: 6px;
+}
+
+#entry:selected {
+    background-color: #313244;
+}
+
+#entry:selected #text {
+    color: #89b4fa;
+}
+
+#entry arrow {
+    border:     none;
+    color:      #89b4fa;
+}
